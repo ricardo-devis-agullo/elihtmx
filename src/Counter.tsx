@@ -22,21 +22,31 @@ export const routes = new Elysia()
 
 export function Counter({ count }: { count: number }) {
   return (
-    <div id="counter">
-      <div id="counter-value">{count}</div>
-      <div>
+    <div class="space-y-4" id="counter">
+      <div
+        id="counter-value"
+        class="text-center text-5xl font-bold text-gray-800"
+      >
+        {count}
+      </div>
+
+      <div class="flex justify-center space-x-4">
         <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="button"
           hx-post={api.increment({ count }).post()}
           hx-target="#counter"
+          hx-swap="outerHTML"
         >
           Increment
         </button>
 
         <button
+          class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="button"
           hx-post={api.decrement({ count }).post()}
           hx-target="#counter"
+          hx-swap="outerHTML"
         >
           Decrement
         </button>
