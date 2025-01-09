@@ -12,7 +12,7 @@ declare global {
   var ws: ElysiaWS;
 }
 
-const callback: ListenCallback = async ({ hostname, port }) => {
+const callback: ListenCallback = async () => {
   if (globalThis.ws) globalThis.ws.send("live-reload");
 };
 
