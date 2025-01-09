@@ -1,7 +1,6 @@
 import { Html } from "@elysiajs/html";
 import type { PropsWithChildren } from "@kitajs/html";
-
-const isDev = process.env.NODE_ENV !== "production";
+import { isDev, port } from "./server";
 
 export function BaseHtml({ children }: PropsWithChildren) {
   return (
@@ -10,7 +9,7 @@ export function BaseHtml({ children }: PropsWithChildren) {
         {isDev && (
           <script type="text/javascript">
             {`(function() {
-            const socket = new WebSocket("ws://localhost:3000/live-reload");
+            const socket = new WebSocket("ws://localhost:${port}/live-reload");
             socket.onmessage = function(msg) {
               if (msg.data === 'live-reload') {
                 location.reload();

@@ -1,6 +1,6 @@
 import { Html } from "@elysiajs/html";
 import { Elysia, t } from "elysia";
-import { api } from "./api";
+import { api } from "./server";
 
 export const routes = new Elysia()
   .post(

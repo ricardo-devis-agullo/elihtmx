@@ -1,4 +1,4 @@
-import { Elysia, file, t } from "elysia";
+import { Elysia, file } from "elysia";
 import { Html, html } from "@elysiajs/html";
 import { Home } from "./Home";
 import { BaseHtml } from "./BaseHtml";
@@ -6,6 +6,7 @@ import { ListenCallback } from "elysia/dist/universal/server";
 import { ElysiaWS } from "elysia/dist/ws";
 
 import { routes as counterRoutes } from "./Counter";
+import { isDev, port } from "./server";
 
 declare global {
   var ws: ElysiaWS;
@@ -14,7 +15,6 @@ declare global {
 const callback: ListenCallback = async ({ hostname, port }) => {
   if (globalThis.ws) globalThis.ws.send("live-reload");
 };
-const isDev = process.env.NODE_ENV !== "production";
 
 const app = new Elysia()
   .use(html())
@@ -37,7 +37,7 @@ if (isDev) {
   });
 }
 
-app.listen(3000, callback);
+app.listen(port, callback);
 
 export type App = typeof app;
 
