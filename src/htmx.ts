@@ -1,5 +1,3 @@
-import type { App } from "./index";
-
 declare global {
   namespace JSX {
     interface HtmlTag {
@@ -45,3 +43,5 @@ declare global {
     }
   }
 }
+
+export {};

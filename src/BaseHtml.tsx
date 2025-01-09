@@ -23,11 +23,7 @@ export function BaseHtml({ children }: PropsWithChildren) {
         <meta charset="UTF-8 " />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>HTMX Example</title>
-        <script
-          src="https://unpkg.com/htmx.org@2.0.4"
-          integrity="sha384-HGfztofotfshcF7+8n44JQL2oJmowVChPTg48S+jvZoztPfvwD79OC/LTtG6dMp+"
-          crossorigin="anonymous"
-        />
+        <script src="/htmx.js" />
         <link href="/styles.css" rel="stylesheet" />
       </head>
       <body>{children}</body>
