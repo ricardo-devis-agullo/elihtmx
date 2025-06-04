@@ -23,6 +23,7 @@ export function BaseHtml({ children }: PropsWithChildren) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>HTMX Example</title>
         <script src="/htmx.js" />
+        <script src="/hyperscript.js" />
         <link href="/styles.css" rel="stylesheet" />
       </head>
       <body>{children}</body>

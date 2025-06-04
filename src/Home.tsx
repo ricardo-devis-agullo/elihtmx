@@ -16,6 +16,15 @@ export function Home() {
 
         <Counter count={0} />
 
+        <div class="flex justify-center">
+          <button
+            class="mt-4 px-4 py-2 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition-colors"
+            _="on click set my textContent to 'Clicked!'"
+          >
+            Click me!
+          </button>
+        </div>
+
         <div class="text-center mt-6 text-gray-500 text-sm">
           Built with ❤️ using Elysia, HTMX, and Tailwind CSS.
         </div>

@@ -27,7 +27,8 @@ const app = new Elysia()
   })
   .use(counterRoutes)
   .get("/styles.css", () => file("./tailwind-gen/styles.css"))
-  .get("/htmx.js", () => file("./vendor/htmx@2.0.4.js"));
+  .get("/htmx.js", () => file("./vendor/htmx@2.0.4.js"))
+  .get("/hyperscript.js", () => file("./vendor/hyperscript@0.9.14.js"));
 
 if (isDev) {
   app.ws("/live-reload", {
