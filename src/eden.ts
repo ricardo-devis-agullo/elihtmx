@@ -8,7 +8,7 @@ type Prettify<T> = {
 namespace Treaty {
   export type Create<App extends Elysia<any, any, any, any, any, any, any>> =
     App extends {
-      _routes: infer Schema extends Record<string, any>;
+      "~Routes": infer Schema extends Record<string, any>;
     }
       ? Prettify<Sign<Schema>>
       : "Please install Elysia before using Eden";
