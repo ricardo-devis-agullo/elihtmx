@@ -7,7 +7,7 @@ export function Home() {
       <div class="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-lg">
         <div>
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Elysia + HTMX + Tailwind CSS
+            Elysia + HTMX + Hyperscript + Tailwind CSS
           </h2>
           <p class="mt-2 text-center text-sm text-gray-600">
             A beautiful counter example
@@ -26,7 +26,7 @@ export function Home() {
         </div>
 
         <div class="text-center mt-6 text-gray-500 text-sm">
-          Built with ❤️ using Elysia, HTMX, and Tailwind CSS.
+          Built with ❤️ using Elysia, HTMX, Hyperscript and Tailwind CSS.
         </div>
       </div>
     </div>
