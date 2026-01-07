@@ -34,5 +34,5 @@ app.listen(port, callback);
 export type App = typeof app;
 
 console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
+  `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
 );
