@@ -1,9 +1,11 @@
 import { Elysia, file } from "elysia";
-import { html } from "@elysiajs/html";
-import type { ListenCallback } from "elysia/dist/universal/server";
-import type { ElysiaWS } from "elysia/dist/ws";
+import { Html, html } from "@elysiajs/html";
+import { Home } from "./Home";
+import { BaseHtml } from "./BaseHtml";
+import { ListenCallback } from "elysia/dist/universal/server";
+import { ElysiaWS } from "elysia/dist/ws";
 
-import { mediaRoutes } from "./routes/media.tsx";
+import { routes as counterRoutes } from "./Counter";
 import { isDev, port } from "./server";
 
 declare global {
@@ -16,7 +18,14 @@ const callback: ListenCallback = async () => {
 
 const app = new Elysia()
   .use(html())
-  .use(mediaRoutes)
+  .get("/", async (req) => {
+    return (
+      <BaseHtml>
+        <Home />
+      </BaseHtml>
+    );
+  })
+  .use(counterRoutes)
   .get("/styles.css", () => file("./tailwind-gen/styles.css"))
   .get("/htmx.js", () => file("./vendor/htmx@2.0.4.js"))
   .get("/hyperscript.js", () => file("./vendor/hyperscript@0.9.14.js"));

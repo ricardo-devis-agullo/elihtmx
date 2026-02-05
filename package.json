@@ -9,8 +9,7 @@
     "dev:ts": "bun run tw:dev",
     "tw": "bunx @tailwindcss/cli -i ./src/styles.css -o ./tailwind-gen/styles.css",
     "tw:dev": "bunx @tailwindcss/cli -i ./src/styles.css -o ./tailwind-gen/styles.css --watch",
-    "start": "NODE_ENV=production bun run src/index.tsx",
-    "sync": "bun run src/scripts/sync.ts"
+    "start": "NODE_ENV=production bun run src/index.tsx"
   },
   "dependencies": {
     "@elysiajs/html": "^1.4.0",
